@@ -1,0 +1,30 @@
+{
+	"tailwindStyleBlock": {
+		"scope": "typescriptreact",
+		"prefix": "makestyle",
+		"body": [
+			" style={[tailwind('$1')$2]}"
+		],
+		"description": "tailwind Style Basic Block"
+	},
+
+	"BasicStyleView": {
+		"scope": "typescriptreact",
+		"prefix": "stView",
+		"body": [
+			"<View style={{}}>",
+			"   ",
+			"</View>"
+		],
+		"description": "Basic Local Image"
+	},
+	"BasicStyleText": {
+		"scope": "typescriptreact",
+		"prefix": "rntext",
+		"body": [
+			"<Text style={[tailwind('font-regular font-15')]}>${1}</Text>",
+		],
+		"description": "Basic Local Image"
+	},
+}
+
