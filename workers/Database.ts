@@ -49,7 +49,8 @@ export const createTable = async () => {
             `CREATE TABLE IF NOT EXISTS Users (
         id INTEGER PRIMARY KEY AUTOINCREMENT,
         name TEXT,
-        age INTEGER
+        age INTEGER,
+        password TEXT
       );`
         );
         console.log("Table created successfully");
@@ -58,7 +59,7 @@ export const createTable = async () => {
     }
 };
 
-export const insertUser = async (name, age) => {
+export const insertUser = async (name, age, password) => {
     if (!db) {
         console.log("Database is not open");
         return;
@@ -66,8 +67,8 @@ export const insertUser = async (name, age) => {
 
     try {
         await db.executeSql(
-            `INSERT INTO Users (name, age) VALUES (?, ?);`,
-            [name, age]
+            `INSERT INTO Users (name, age, password) VALUES (?, ?, ?);`,
+            [name, age, password]
         );
         console.log("User inserted successfully");
     } catch (error) {

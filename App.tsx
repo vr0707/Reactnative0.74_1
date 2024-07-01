@@ -1,27 +1,27 @@
-import { View, Text, SafeAreaView } from 'react-native'
+import { View, Text, SafeAreaView, StatusBar, Appearance } from 'react-native'
 import React, { useEffect } from 'react'
-import { NavigationContainer } from '@react-navigation/native'
+import { NavigationContainer, ThemeProvider } from '@react-navigation/native'
 import Home from './src/Component/Home'
 import { Provider } from 'react-redux'
 import store from './Redux'
 import { setName } from './Redux/actions/action'
-import RootNvaigation from './src/RootNavigation/RootNvaigation'
 import { UserProvider } from './src/UserContext/UserContext'
-import { ThemeProvider } from './src/Component/ThemeContext/ThemeContext'
+import { useTheme } from './src/ThemeContext/ThemeContext'
+import RootNavigation from './src/RootNavigation/RootNavigation'
 
 
 export default function App() {
   // useEffect(() => {
   //   dispatch(setName('vallu'))
   // })
+  // const { theme, toggleTheme } = useTheme();
   return (
     <SafeAreaView style={{ flex: 1 }}>
       <Provider store={store}>
-        <ThemeProvider>
-          <UserProvider>
-            <RootNvaigation />
-          </UserProvider>
-        </ThemeProvider>
+        <StatusBar backgroundColor={'#3896FF'} barStyle={'light-content'} />
+        <UserProvider>
+          <RootNavigation />
+        </UserProvider>
       </Provider>
     </SafeAreaView>
   )

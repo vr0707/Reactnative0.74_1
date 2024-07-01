@@ -7,23 +7,15 @@ import Home from '../Component';
 import { useDispatch } from 'react-redux';
 import { setName } from '../../Redux/actions/action';
 import SQLite from 'react-native-sqlite-storage';
-import Second from '../../src/Component/Second';
-const db = SQLite.openDatabase(
-    {
-        name: 'MainDB',
-        location: 'default',
-    },
-    () => { },
-    error => { "eeeeee", console.log(error) }
-);
-export default function RootNvaigation() {
+import Second from '../Component/Second';
+import Login from '../Component/LoginScreen';
+import SignUp from '../../sharedComponents/molecules/SignUp';
+import SignUpScreen from '../../src/Component/SignUpScreen';
+import { closeDB, createTable, initDB } from '../../workers/Database';
+export default function RootNavigation() {
+
     const disPatch = useDispatch()
-    useEffect(() => {
-        // getData();
-        createTable()
-        getData()
-        valueSet()
-    }, [])
+
     const valueSet = async () => {
         disPatch(setName('vallu'))
     }
@@ -54,19 +46,11 @@ export default function RootNvaigation() {
             console.log(error);
         }
     }
-    const createTable = () => {
-        db.transaction((tx) => {
-            tx.executeSql(
-                "CREATE TABLE IF NOT EXISTS "
-                + "Users "
-                + "(ID INTEGER PRIMARY KEY AUTOINCREMENT, Name TEXT, Age INTEGER);"
-            )
-        })
-    }
+
     return (
         <NavigationContainer>
             <RootNavigator.Navigator
-                initialRouteName={"Home"}
+                initialRouteName={"Login"}
                 screenOptions={StackConfig}
             >
                 <RootNavigator.Screen
@@ -76,6 +60,14 @@ export default function RootNvaigation() {
                 <RootNavigator.Screen
                     component={Second}
                     name="Second"
+                />
+                <RootNavigator.Screen
+                    component={Login}
+                    name="Login"
+                />
+                <RootNavigator.Screen
+                    component={SignUpScreen}
+                    name="SignUp"
                 />
 
             </RootNavigator.Navigator>

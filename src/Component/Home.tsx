@@ -1,4 +1,4 @@
-import { View, Text, Button, TextInput } from 'react-native'
+import { View, Text, Button, TextInput, Image } from 'react-native'
 import React, { useContext, useEffect, useMemo, useRef, useState } from 'react'
 import store from '../../Redux'
 import { useDispatch } from 'react-redux';
@@ -9,6 +9,7 @@ import requestServers from '../../workers/requestServers';
 import { closeDB, createTable, initDB } from '../../workers/Database';
 import { useNavigation } from '@react-navigation/native';
 import { UserContext } from '../../src/UserContext/UserContext';
+import assets_manifest from '@assets';
 
 export default function Home() {
     const { user, setUser } = useContext(UserContext);
@@ -93,18 +94,7 @@ export default function Home() {
     }
 
     console.log(fibonacci(10));
-    useEffect(() => {
-        const setupDB = async () => {
-            await initDB();
-            await createTable();
-        };
 
-        setupDB();
-
-        return () => {
-            closeDB();
-        };
-    }, []);
     return (
         <View style={[tailwind('flex-1 items-center justify-center')]}>
             {/* <Text style={[tailwind('font-20')]}>{val}</Text>
@@ -116,7 +106,7 @@ export default function Home() {
             <Button title="Stop Timer" onPress={stopTimer} />
             <Text>Time: {time}</Text> */}
             {/* <Button title="Start Timer" onPress={} /> */}
-
+            <Image source={assets_manifest.mail} />
             <Text>Count: {count}</Text>
             <Text>Calculated Value: {calculatedValue}</Text>
             <Button title="Increment" onPress={() => setCount(count + 1)} />

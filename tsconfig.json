@@ -7,6 +7,12 @@
       "@tailwind": [
         "./tailwind"
       ],
+      "@assets": [
+        "./constants/assets_manifest"
+      ],
+      "@sharedComponents": [
+        "./sharedComponents"
+      ],
     },
     "esModuleInterop": true,
     "module": "CommonJS",
