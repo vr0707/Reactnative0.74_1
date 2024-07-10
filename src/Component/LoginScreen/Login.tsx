@@ -30,24 +30,25 @@ export default function Login() {
         }, [])
     );
     function login() {
-        for (let i = 0; i < users.length; i++) {
-            // const element = array[i];
-            if (emailOrMobile == users[i].name) {
-                console.log(users[i].name);
-                if (password == users[i].password) {
-                    console.log(users[i].password);
+        // for (let i = 0; i < users.length; i++) {
+        //     // const element = array[i];
+        //     if (emailOrMobile == users[i].name) {
+        //         console.log(users[i].name);
+        //         if (password == users[i].password) {
+        //             console.log(users[i].password);
 
-                } else {
-                    console.log("Not Valid Password");
-                }
+        //         } else {
+        //             console.log("Not Valid Password");
+        //         }
 
 
-            } else {
-                console.log("Not Valid User Name");
+        //     } else {
+        //         console.log("Not Valid User Name");
 
-            }
+        //     }
 
-        }
+        // }
+        navigation.navigate("Second")
     }
     const width = Dimensions.get('screen').width;
     const height = Dimensions.get('screen').height;
@@ -172,7 +173,7 @@ export const PasswordComponent = (props: any) => {
         <View style={[tailwind('mt-6')]}>
             <View style={[tailwind('flex-row items-center justify-between  mb-3')]}>
                 <Text style={[tailwind('font-medium font-14 text-black'), { color: '#000000', fontSize: 16, fontFamily: 'Outfit-Medium' }]}>
-                    Password
+                    {props?.values}
                 </Text>
             </View>
             <View
@@ -198,7 +199,7 @@ export const PasswordComponent = (props: any) => {
                         value={props?.password}
                         onChangeText={text => props?.setPassword(text)}
                         secureTextEntry={props?.hidePassword}
-                        placeholder="Enter Password"
+                        placeholder={"Enter" + " " + props?.values}
                         placeholderTextColor={"#15162450"}
                         onFocus={() => {
                             props?.setPasswordFocus(true);
@@ -230,13 +231,13 @@ export const PasswordComponent = (props: any) => {
                     </TouchableOpacity>
                 </View>
             </View>
-            <View style={[tailwind('mt-4')]}>
+            {/* <View style={[tailwind('mt-4')]}>
                 <TouchableOpacity onPress={() => { }}>
                     <Text style={[tailwind('font-regular font-12'), { color: '#FF0000', textAlign: 'right', fontFamily: 'Outfit-Regular' }]}>
                         Forgot Password?
                     </Text>
                 </TouchableOpacity>
-            </View>
+            </View> */}
         </View>
     );
 };
