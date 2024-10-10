@@ -4,8 +4,9 @@ import tailwind from '@tailwind';
 import { getPersistedUser, getToken } from './localStorage';
 import { CommonActions, useNavigation } from '@react-navigation/native';
 import { useDispatch } from 'react-redux';
-import { saveJWTTokenAction } from '@actions/userActions';
+
 import AsyncStorage from '@react-native-async-storage/async-storage';
+import { saveJWTTokenAction } from '../Redux/actions/action';
 
 export default function NavigateDicision() {
     const navigation = useNavigation();
@@ -32,6 +33,7 @@ export default function NavigateDicision() {
                     }),
                 );
             } else {
+                console.log("navigate decision login screen")
                 navigation.dispatch(
                     CommonActions.reset({
                         index: 0,

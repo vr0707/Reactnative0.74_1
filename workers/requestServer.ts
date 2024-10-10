@@ -1,16 +1,14 @@
-import { METHODS } from '../constants/API_constants';
-import NetInfo from '@react-native-community/netinfo';
-import store from '../store/index';
+import store from '../Redux/index'
 import {
   getToken,
   removePersistedUser,
   removeToken,
   saveToken,
 } from './localStorage';
-import { saveJWTTokenAction } from '@actions/userActions';
 import RNRestart from 'react-native-restart';
 import { errorBox } from './utils';
 import axios from 'axios';
+import { saveJWTTokenAction } from '../Redux/actions/action';
 
 const requestServer = function (
   method: string,
@@ -22,7 +20,6 @@ const requestServer = function (
   return new Promise(async (resolve, reject) => {
     //for token
     let token = store.getState().user.jwt_token;
-
 
     if (!token) {
       const sinfoToken = await getToken();
@@ -44,12 +41,11 @@ const requestServer = function (
     await axios({
       method: method,
       url: url,
-      data: payload,
       headers: {
         Accept: 'application/json',
         'Content-Type': 'application/json',
         'Access-Control-Allow-Origin': '*',
-        authorization: 'Bearer' + token,
+        authorization: token,
       },
     })
       .then(async (serverResponse: any) => {
@@ -67,12 +63,12 @@ const requestServer = function (
         if (serverResponse.status == 200) {
           logRequest(url, payload);
           if (serverResponse.headers.get('content-length') === '0') {
-            resolve({ status: serverResponse.status });
+            resolve({status: serverResponse.status});
           } else {
             resolve({
               status: serverResponse.status,
               data: serverResponse?.data,
-              statusCode: serverResponse.status,
+              statusCode: serverResponse.status
             });
           }
         } else {
@@ -97,13 +93,9 @@ const requestServer = function (
         }
       })
       .catch((err: any) => {
-        console.log('>> Status: ', JSON.stringify(err?.response.status));
+        console.log(err);
         ErrorRequest(url, payload);
-        reject({
-          status: false,
-          data: err.response?.data ? err.response?.data : err,
-          statusCode: err?.response?.status,
-        });
+        reject({status: false, data: err, statusCode: err?.response?.status});
       });
   });
 };

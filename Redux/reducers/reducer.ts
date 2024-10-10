@@ -1,8 +1,9 @@
-import { SET_USER_NAME } from "../actions/action";
+import { SAVE_JWT_TOKEN,SET_USER_NAME } from "../actions/actionTypes";
 
 
 const initialstate = {
-    name: null
+    name: null,
+    jwt_token:null
 }
 interface actionShape {
     type: string;
@@ -16,6 +17,12 @@ const user = (state = initialstate, action: actionShape): any => {
                 name: action.payload
             })
         }
+        case SAVE_JWT_TOKEN: {
+            return {
+              ...state,
+              jwt_token: action.payload,
+            };
+          }
         default:
             return state;
     }

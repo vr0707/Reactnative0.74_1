@@ -7,6 +7,7 @@ import tailwind from '@tailwind';
 import { Modalize } from 'react-native-modalize';
 import Modal from "react-native-modal";
 import { EmailPhoneComp, PasswordComponent } from '../LoginScreen/Login';
+import store from '../../../Redux';
 const UserSchema = {
     name: 'User',
     properties: {
@@ -42,7 +43,13 @@ export default function Second() {
     const [passwordFocus, setPasswordFocus] = useState(false);
     const [id, setID] = useState(0)
     const [select, setSelect] = useState(false)
+    useEffect(() => {
+        let _name = store.getState().user?.name;
+        let jwt = store.getState().user?.jwt_token
+        console.log("jwt",jwt);
+        
 
+    }, [])
     const onOpen = () => {
         // if (modalizeRef.current) {
         //     console.log(modalizeRef.current);

@@ -3,11 +3,14 @@ import React, { useCallback, useEffect, useState } from 'react';
 import tailwind from '@tailwind';
 import assets_manifest from '@assets';
 import Icon from 'react-native-vector-icons/Ionicons';
-import { useFocusEffect, useNavigation } from '@react-navigation/native';
+import { CommonActions, useFocusEffect, useNavigation } from '@react-navigation/native';
 import { useDispatch } from 'react-redux';
 import { KeyboardAwareScrollView } from 'react-native-keyboard-aware-scroll-view';
 import ButtonComponent from '../../../sharedComponents/molecules/ButtonComponent';
 import { getUsers, initDB, closeDB, createTable } from '../../../workers/Database';
+import { getAxiosTest } from '../../../src/remote/userRemote';
+import { saveJWTTokenAction } from '../../../Redux/actions/action';
+import NavigateDicision from 'workers/NavigationDecision';
 
 export default function Login() {
 
@@ -48,7 +51,17 @@ export default function Login() {
         //     }
 
         // }
-        navigation.navigate("Second")
+        // navigation.navigate("BottomTabNavigation")
+        navigation.dispatch(
+            CommonActions.reset({
+                index: 0,
+                routes: [
+                    {
+                        name: 'BottomTabNavigation',
+                    },
+                ],
+            }),
+        );
     }
     const width = Dimensions.get('screen').width;
     const height = Dimensions.get('screen').height;
@@ -71,6 +84,12 @@ export default function Login() {
 
 
     // };
+    // useEffect(() => {
+    //     // getData()
+    //     getAxiosTest(1).then((res) => {
+    //         console.log("hoeres", res.res)
+    //     })
+    // }, [])
     return (
         <View style={[tailwind('flex-1 ')]}>
             <View style={[tailwind('px-8 flex-1 justify-center')]}>
