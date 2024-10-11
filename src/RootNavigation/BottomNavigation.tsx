@@ -18,6 +18,7 @@ export default function BottomNavigation() {
             screenOptions={config}
         >
             <BottomTab.Screen options={{
+
                 tabBarIcon: ({ }) => (
                     <Icon
                         name={'home'}

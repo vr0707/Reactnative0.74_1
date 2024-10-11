@@ -11,7 +11,7 @@ import { getUsers, initDB, closeDB, createTable } from '../../../workers/Databas
 import { getAxiosTest } from '../../../src/remote/userRemote';
 import { saveJWTTokenAction } from '../../../Redux/actions/action';
 import NavigateDicision from 'workers/NavigationDecision';
-
+import { scale, verticalScale, moderateScale } from 'react-native-size-matters';
 export default function Login() {
 
 
@@ -116,7 +116,7 @@ export default function Login() {
                         onPress={() => {
                             login()
                         }}
-                        style={[tailwind('pt-0'), { width: '100%' }]}>
+                        style={[tailwind('pt-0'), { width: moderateScale(180, 0.3) }]}>
                         <ButtonComponent text="Login" />
 
                     </TouchableOpacity>
@@ -124,7 +124,7 @@ export default function Login() {
                 </View>
                 <View style={[tailwind('items-center my-1 flex-row self-center')]}>
                     <Text>Don't have an account ? </Text>
-                    <TouchableOpacity onPress={() => navigation.navigate("SignUp")} activeOpacity={0.7}>
+                    <TouchableOpacity onPress={() => navigation.navigate("SignUpScreen")} activeOpacity={0.7}>
                         <Text style={[tailwind(''), { color: "#0097FF" }]}>Sign Up</Text>
                     </TouchableOpacity>
                 </View>
@@ -135,7 +135,7 @@ export default function Login() {
 }
 export const EmailPhoneComp = (props: any) => {
     return (
-        <View style={[tailwind('mt-10')]}>
+        <View style={[tailwind('mt-10 self-center')]}>
             <Text style={[tailwind('font-medium font-14 mb-3 text-black'), { color: '#2E2E2E', fontSize: 16, fontFamily: 'Outfit-Medium' }]}>
                 Email / Phone
             </Text>
@@ -149,6 +149,7 @@ export const EmailPhoneComp = (props: any) => {
                         borderColor: props?.emailFocus ? '#008CEB' : '#E2DBD6',
                         borderRadius: 10,
                         backgroundColor: props?.emailFocus ? '#E8F6FF' : '#F7F7F9',
+                        width: moderateScale(340, 0.5)
                     },
                 ]}>
                 <View style={[tailwind('flex-row items-center')]}>
@@ -189,10 +190,10 @@ export const EmailPhoneComp = (props: any) => {
 export const PasswordComponent = (props: any) => {
     const navigation = useNavigation();
     return (
-        <View style={[tailwind('mt-6')]}>
+        <View style={[tailwind('mt-6 self-center')]}>
             <View style={[tailwind('flex-row items-center justify-between  mb-3')]}>
                 <Text style={[tailwind('font-medium font-14 text-black'), { color: '#000000', fontSize: 16, fontFamily: 'Outfit-Medium' }]}>
-                    {props?.values}
+                    Password
                 </Text>
             </View>
             <View
@@ -202,6 +203,7 @@ export const PasswordComponent = (props: any) => {
                         borderColor: props?.passwordFocus ? '#008CEB' : '#E2DBD6',
                         borderRadius: 10,
                         backgroundColor: props?.passwordFocus ? '#E8F6FF' : '#F7F7F9',
+                        width: moderateScale(340, 0.7)
                     },
                 ]}>
                 <View style={[tailwind('flex-row items-center')]}>

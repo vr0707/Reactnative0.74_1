@@ -7,6 +7,7 @@ import tailwind from '@tailwind';
 import Icon from 'react-native-vector-icons/Ionicons';
 import { useNavigation } from '@react-navigation/native';
 import { closeDB, createTable, initDB, insertUser } from '../../../workers/Database';
+import { moderateScale, scale } from 'react-native-size-matters';
 
 
 export default function SignUpScreen() {
@@ -65,7 +66,7 @@ export default function SignUpScreen() {
                             console.log("login")
                             addUser()
                         }}
-                        style={[tailwind('pt-0'), { width: '100%' }]}>
+                        style={[tailwind('pt-0'), { width: scale(120) }]}>
                         <ButtonComponent text="SignUp" />
 
                     </TouchableOpacity>
@@ -79,7 +80,7 @@ export default function SignUpScreen() {
 const PasswordComponent = (props: any) => {
     const navigation = useNavigation();
     return (
-        <View style={[tailwind('mt-6')]}>
+        <View style={[tailwind('mt-6 self-center')]}>
             <View style={[tailwind('flex-row items-center justify-between  mb-3')]}>
                 <Text style={[tailwind('font-medium font-14 text-black'), { color: '#000000', fontSize: 16, fontFamily: 'Outfit-Medium' }]}>
                     Password
@@ -92,6 +93,7 @@ const PasswordComponent = (props: any) => {
                         borderColor: props?.passwordFocus ? '#008CEB' : '#E2DBD6',
                         borderRadius: 10,
                         backgroundColor: props?.passwordFocus ? '#E8F6FF' : '#F7F7F9',
+                        width: moderateScale(340, 0.7)
                     },
                 ]}>
                 <View style={[tailwind('flex-row items-center')]}>
