@@ -16,33 +16,33 @@ import { errorBox, infoBox } from '../../workers/utils';
 import { useQuery } from 'react-query';
 export default function Home() {
 
-    // useEffect(() => {
-    //     // getData()
-    //     getAxiosTest(1).then((res) => {
-    //         console.log("res", res)
-    //     })
-    // }, [])
-    const categoory = useQuery(['getAxiosTest', 1], getAxiosTest);
-    console.log('catrgory', categoory?.data?.res)
-    return (
-        <View style={tailwind('bg-white h-full p-3')}>
-            <TopBar title="Hello" />
-            {/* {categoryData.data?.status ? (
+  // useEffect(() => {
+  //     // getData()
+  //     getAxiosTest(1).then((res) => {
+  //         console.log("res", res)
+  //     })
+  // }, [])
+  const categoory = useQuery(['getAxiosTest', 1], getAxiosTest);
+  console.log('catrgory', categoory?.data?.res)
+  return (
+    <View style={tailwind('bg-white h-full p-3')}>
+      <TopBar title="Hello" />
+      {/* {categoryData.data?.status ? (
           <View>
             <Text style={[tailwind('text-red')]}>Run categoory</Text>
             <AddressIcon />
           </View>
         ) : null} */}
-            <Button
-                title="Show toast"
-                onPress={() => infoBox('This is test')}
-            />
-            <Icon name="arrow-down" color={"red"} size={25} />
-            {/* <Image
+      <Button
+        title="Show toast"
+        onPress={() => infoBox('This is test')}
+      />
+      <Icon name="arrow-down" color={"red"} size={25} />
+      {/* <Image
           source={assets.react_logo}
           resizeMode="contain"
           style={[tailwind('w-full h-60')]}
         /> */}
-        </View>
-    )
+    </View>
+  )
 }
