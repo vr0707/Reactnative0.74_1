@@ -28,9 +28,9 @@ export default function Card(props: Prototypes) {
                 <View style={[tailwind('mx-3 justify-between'), {
                     width: moderateScale(200)
                 }]}>
-                    <Text style={[tailwind('font-regular font-bold')]}>{props?.title}</Text>
-                    <Text>{props?.user}</Text>
-                    <Text>{props?.user_id}</Text>
+                    <Text style={[tailwind('font-regular')]}>{props?.title}</Text>
+                    <Text style={[tailwind('font-medium')]}>{props?.user}</Text>
+                    <Text style={[tailwind('font-medium')]}>{props?.user_id}</Text>
                 </View>
             </View>
         </View>

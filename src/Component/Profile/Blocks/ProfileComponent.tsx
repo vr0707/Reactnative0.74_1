@@ -44,7 +44,7 @@ export default function ProfileComponent(props: any) {
                         props?.onChange
                     }
                     style={[
-                        tailwind('font-regular  font-13'),
+                        tailwind('font-medium  font-13'),
                         {
                             height: 40,
                             width: props?.textWidth, marginStart: 12,

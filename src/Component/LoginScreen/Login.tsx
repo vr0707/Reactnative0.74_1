@@ -93,7 +93,14 @@ export default function Login() {
     return (
         <View style={[tailwind('flex-1 ')]}>
             <View style={[tailwind('px-8 flex-1 justify-center')]}>
-
+                <Image
+                    source={assets_manifest.logo}
+                    style={[tailwind('self-center'), {
+                        width: 150,
+                        height: 150,
+                        resizeMode: "contain"
+                    }]}
+                />
                 <EmailPhoneComp
                     emailOrMobile={emailOrMobile}
                     setEmailOrMobile={setEmailOrMobile}
@@ -123,9 +130,9 @@ export default function Login() {
 
                 </View>
                 <View style={[tailwind('items-center my-1 flex-row self-center')]}>
-                    <Text>Don't have an account ? </Text>
+                    <Text style={[tailwind('font-bold')]}>Don't have an account ? </Text>
                     <TouchableOpacity onPress={() => navigation.navigate("SignUpScreen")} activeOpacity={0.7}>
-                        <Text style={[tailwind(''), { color: "#0097FF" }]}>Sign Up</Text>
+                        <Text style={[tailwind('font-regular'), { color: "#0097FF" }]}>Sign Up</Text>
                     </TouchableOpacity>
                 </View>
             </View>
@@ -173,7 +180,7 @@ export const EmailPhoneComp = (props: any) => {
                         placeholderTextColor={"#15162450"}
                         onChangeText={text => props?.setEmailOrMobile(text)}
                         style={[
-                            tailwind(''),
+                            tailwind('font-medium'),
                             {
                                 flex: 1,
                                 fontSize: 16,
@@ -220,14 +227,14 @@ export const PasswordComponent = (props: any) => {
                         value={props?.password}
                         onChangeText={text => props?.setPassword(text)}
                         secureTextEntry={props?.hidePassword}
-                        placeholder={"Enter" + " " + props?.values}
+                        placeholder={"Enter Password"}
                         placeholderTextColor={"#15162450"}
                         onFocus={() => {
                             props?.setPasswordFocus(true);
                             props?.setEmailFocus(false);
                         }}
                         style={[
-                            tailwind(''),
+                            tailwind('font-medium'),
                             {
                                 flex: 1,
                                 fontSize: 16,

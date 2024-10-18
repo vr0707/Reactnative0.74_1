@@ -8,5 +8,8 @@ export default {
     user: require('../assets/images/user.png'),
     location: require('../assets/images/location.png'),
     state: require('../assets/images/navigate.png'),
+    play: require('../assets/images/Play.png'),
+    close: require('../assets/images/close.png'),
+    logo: require('../assets/images/logo.png'),
 
 }

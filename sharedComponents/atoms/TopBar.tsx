@@ -8,8 +8,8 @@ interface Props {
 
 export default function TopBar(props: Props) {
     return (
-        <View style={[tailwind('flex flex-row justify-between items-center py-2')]} >
-            <Text style={[tailwind('')]}>TopBar</Text>
+        <View style={[tailwind('flex  flex-row justify-between items-center py-2')]} >
+            <Text style={[tailwind('font-regular text-black'), { fontSize: 21 }]}>{props?.title}</Text>
         </View>
     )
 }

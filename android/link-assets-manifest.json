@@ -1,4 +1,73 @@
 {
   "migIndex": 1,
-  "data": []
+  "data": [
+    {
+      "path": "assets/fonts/Lexend-Black.ttf",
+      "sha1": "d5cb18ad3ffeeed68c3753396450935fc5ecbeb2"
+    },
+    {
+      "path": "assets/fonts/Lexend-Bold.ttf",
+      "sha1": "df3c3feab8ac51ab6f8d6a01f3b3a0e19dc88d03"
+    },
+    {
+      "path": "assets/fonts/Lexend-ExtraBold.ttf",
+      "sha1": "b4eb65e2f16d6614bde3f7d9d0bb09742ff47163"
+    },
+    {
+      "path": "assets/fonts/Lexend-ExtraLight.ttf",
+      "sha1": "29cea0bfaa9b846ba18aa6ff8c4914db5f09ebd7"
+    },
+    {
+      "path": "assets/fonts/Lexend-Light.ttf",
+      "sha1": "7ee28022da7fcd1f0adcfe7c2d73650c59d5c1fc"
+    },
+    {
+      "path": "assets/fonts/Lexend-Medium.ttf",
+      "sha1": "d607ea1e392b925d5229569cd3a8c9bdfcac1eaf"
+    },
+    {
+      "path": "assets/fonts/Lexend-Regular.ttf",
+      "sha1": "dd3cee6e434d8debb7699473bd61918cfb54798d"
+    },
+    {
+      "path": "assets/fonts/Lexend-SemiBold.ttf",
+      "sha1": "2a080dd36278ff2755d5976317cbeeecbcf6cc62"
+    },
+    {
+      "path": "assets/fonts/Lexend-Thin.ttf",
+      "sha1": "13b34f576c98265048bba2deebe6a97fbc055626"
+    },
+    {
+      "path": "assets/fonts/PlaywriteGBS-ExtraLight.ttf",
+      "sha1": "cc621250d75c349cb2759ff504853ddbf6ed3da7"
+    },
+    {
+      "path": "assets/fonts/PlaywriteGBS-ExtraLightItalic.ttf",
+      "sha1": "5049ed0826bd65476758b7b9021432969b661c19"
+    },
+    {
+      "path": "assets/fonts/PlaywriteGBS-Italic.ttf",
+      "sha1": "3d98e6058b5a5781a9c0a5ae0963ce02ebac1425"
+    },
+    {
+      "path": "assets/fonts/PlaywriteGBS-Light.ttf",
+      "sha1": "02cbcfca1057efa4181f2ec73a8dd6122dded30e"
+    },
+    {
+      "path": "assets/fonts/PlaywriteGBS-LightItalic.ttf",
+      "sha1": "b304ec298ff9944d5b140eeaef2fa6d4242fc35b"
+    },
+    {
+      "path": "assets/fonts/PlaywriteGBS-Regular.ttf",
+      "sha1": "b657820f7717f1ca15cc99438a3db8064ca67c22"
+    },
+    {
+      "path": "assets/fonts/PlaywriteGBS-Thin.ttf",
+      "sha1": "3024caf9b3bb3867550e57431d4a82098d89176e"
+    },
+    {
+      "path": "assets/fonts/PlaywriteGBS-ThinItalic.ttf",
+      "sha1": "a2dd218e80c27e576f5b9003bfc25474c9d3ec07"
+    }
+  ]
 }

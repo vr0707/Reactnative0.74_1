@@ -128,7 +128,7 @@ export default function Profile() {
                     backgroundColor: "#0394fc",
                     borderRadius: 40, alignSelf: 'center'
                 }]}>
-                <Text style={[tailwind(''), { fontSize: 16, color: "black" }]}>Save</Text>
+                <Text style={[tailwind('font-bold'), { fontSize: 16, color: "black" }]}>Save</Text>
             </TouchableOpacity>
         </View>
     )
